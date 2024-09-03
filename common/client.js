@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Client = exports.createUuid = void 0;
 const debug_1 = require("debug");
-const mqtt_1 = require("mqtt");
+const mqtt_1 = require("mqtt/dist/mqtt");
 const uuid_1 = require("uuid");
 const __1 = require("..");
 const mqtt_utils_1 = require("./mqtt-utils");

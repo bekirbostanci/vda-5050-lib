@@ -71,7 +71,8 @@
     "dependencies": {
         "debug": "^4.3.4",
         "mqtt": "^4.3.7",
-        "uuid": "^9.0.0"
+        "uuid": "^9.0.0",
+        "worker-timers": "^8.0.5"
     },
     "devDependencies": {
         "@exodus/schemasafe": "^1.0.0-rc.9",

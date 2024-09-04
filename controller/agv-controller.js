@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AgvController = void 0;
 const __1 = require("..");
+const worker_timers_1 = require("worker-timers");
 class AgvController extends __1.AgvClient {
     constructor(agvId, clientOptions, controllerOptions, adapterOptions) {
         var _a;
@@ -172,7 +173,7 @@ class AgvController extends __1.AgvClient {
         if (this.controllerOptions.publishVisualizationInterval <= 0) {
             return;
         }
-        this._publishVisualizationIntervalId = setInterval(() => this._publishVisualization(), this.controllerOptions.publishVisualizationInterval);
+        this._publishVisualizationIntervalId = (0, worker_timers_1.setInterval)(() => this._publishVisualization(), this.controllerOptions.publishVisualizationInterval);
     }
     async _publishVisualization() {
         try {

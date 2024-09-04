@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VirtualAgvAdapter = void 0;
 const __1 = require("..");
+const worker_timers_1 = require("worker-timers");
 class VirtualAgvAdapter {
     constructor(controller, adapterOptions, debug) {
         this.debug = debug;
@@ -44,7 +45,7 @@ class VirtualAgvAdapter {
         this._tick = 0;
         const tickInterval = 1000 / this.options.tickRate;
         let realTime = Date.now();
-        this._tickIntervalId = setInterval(() => {
+        this._tickIntervalId = (0, worker_timers_1.setInterval)(() => {
             const now = Date.now();
             const realInterval = now - realTime;
             realTime = now;
